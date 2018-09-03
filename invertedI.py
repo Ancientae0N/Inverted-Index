@@ -75,8 +75,14 @@ def subseqnsubseq(string):
 		print(i,":",fileNames[i-1])
 
 def distcount(string):
-	sub = string.split(' /2 ')
+	sub = string.split(' ')
+	print(sub)
+	a=list(sub[1])
+	x=int(a[-1])
 	
+
+	sub.remove(sub[1])
+
 	o=[]
 	final=[]
 	for each in sub:
@@ -93,7 +99,7 @@ def distcount(string):
 			t=inverted[sub[1]][key]
 			for pos in s:
 				for pos2 in t:
-					if(abs(pos2-pos)==2):
+					if(abs(pos2-pos)==x):
 						final.append(key)
 	final=list(Set(final))
 	for i in final:
@@ -146,24 +152,24 @@ for i in range(len(files)):
 #y=Set(inverted[0]['There'])
 #print(y)
 
-print("Query for any AND any type")
+print("Query for any AND any type : snake AND frog")
 intersectQ("snake AND frog")
 print()
-print("Query for any OR any type")
+print("Query for any OR any type: snake OR frog")
 unionQ("snake OR frog")
 print()
-print("Query for a string")
+print("Query for a string: snake")
 search("snake")
 print()
-print("Query for a subsequence")
+print("Query for a subsequence: There was a")
 x=searchsubseq("there was a")
 for i in x:
 		print(i,":", fileNames[i-1])
 print()
-print("Query for a subsequence AND a subsequence")
+print("Query for a subsequence AND a subsequence: There was a AND One day")
 subseqnsubseq("there was a AND one day")
 print()
-print("Query for a distance count between two words")
+print("Query for a distance count between two words:why /2 you")
 distcount("why /2 you")
 print()
 
