@@ -76,7 +76,7 @@ def subseqnsubseq(string):
 
 def distcount(string):
 	sub = string.split(' ')
-	print(sub)
+	
 	a=list(sub[1])
 	x=int(a[-1])
 	
@@ -99,7 +99,7 @@ def distcount(string):
 			t=inverted[sub[1]][key]
 			for pos in s:
 				for pos2 in t:
-					if(abs(pos2-pos)==x):
+					if(abs(pos2-pos)<=x+1):
 						final.append(key)
 	final=list(Set(final))
 	for i in final:
@@ -171,6 +171,9 @@ subseqnsubseq("there was a AND one day")
 print()
 print("Query for a distance count between two words:why /2 you")
 distcount("why /2 you")
+print()
+print("Query for a distance count between two words:proved /2 entertainer")
+distcount("proved /3 entertainer")
 print()
 
 
