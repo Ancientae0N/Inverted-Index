@@ -172,7 +172,7 @@ print()
 print("Query for a distance count between two words:why /2 you")
 distcount("why /2 you")
 print()
-print("Query for a distance count between two words:proved /2 entertainer")
+print("Query for a distance count between two words:proved /3 entertainer")
 distcount("proved /3 entertainer")
 print()
 
